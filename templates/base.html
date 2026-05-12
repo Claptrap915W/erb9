@@ -1,24 +1,22 @@
-{% extends "base.html" %}
- {% block content %}
-{% comment %} <!DOCTYPE html>
-<html lang="en"> {% endcomment %}
-
-  {% comment %} <head>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/css/all.css" />
+    <link rel="stylesheet" href={% static "css/all.css" %} />
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href={% static "css/bootstrap.css" %}/>
+    <link rel="stylesheet" href={% static "css/lightbox.min.css" %}/>
     <!-- Custom -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href={% static "css/style.css" %}/>
 
     <title>BC Health Care</title>
-  </head> {% endcomment %}
-{% comment %} 
-  <body> {% endcomment %}
+  </head>
 
+  <body>
     {% comment %} <!-- Top Bar -->
     <section id="top-bar" class="p-3">
       <div class="container">
@@ -95,7 +93,7 @@
           </ul>
         </div>
       </div>
-    </nav> {% endcomment %}
+    </nav>
 
     <!-- Showcase -->
     <section id="showcase">
@@ -391,15 +389,19 @@
       </div>
     </section>
 
-    {% comment %} <!-- Footer -->
+    <!-- Footer -->
     <footer id="main-footer" class="py-4 bg-primary text-white text-center">
       Copyright &copy;
       <span class="year"></span> BC Health Care 
-    </footer> {% endcomment %}
+    </footer>  {% endcomment %}
+    {% include "partials/_topbar.html" %}
+    {% include "partials/_navbar.html" %}
+    {% block content  %} {% endblock %}
+    {% include 'partials/_footer.html'%}
 
-    {% comment %} <script src="assets/js/jquery-3.3.1.min.js "></script>
-    <script src="assets/js/bootstrap.bundle.min.js "></script>
-    <script src="assets/js/main.js "></script> {% endcomment %}
-  {% comment %} </body>
-</html> {% endcomment %}
-{% endblock  %}
+    <script src={% static "js/jquery-3.3.1.min.js" %}></script>
+    <script src={% static "js/bootstrap.bundle.min.js" %}></script>
+    <script src={% static "js/lightbox.min.js " %}></script>
+    <script src={% static "js/main.js " %}></script>
+  </body>
+</html>
