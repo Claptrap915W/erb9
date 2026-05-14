@@ -33,15 +33,31 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+# INSTALLED_APPS = [
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+#     'pages.apps.PagesConfig'
+# ]
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'pages.apps.PagesConfig'
+    'django.contrib.staticfiles',  
 ]
+APPLICATION_APPS = [
+    'pages.apps.PagesConfig',
+    'doctors.apps.DoctorsConfig',
+    'listings.apps.ListingsConfig',
+]
+THIRD_PARTY_APPS = []
+
+INSTALLED_APPS = DJANGO_APPS + APPLICATION_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,8 +94,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'erb9',
+        'USER': 'postgres',
+        "PASSWORD" : 759558,
+        'HOST' : 'localhost',
+        'PORT' : '5432',
     }
 }
 
