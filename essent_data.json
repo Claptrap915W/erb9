@@ -1,0 +1,284 @@
+[
+{
+  "model": "doctors.doctor",
+  "pk": 1,
+  "fields": {
+    "name": "kyle",
+    "photo": "photos/2026/05/14/kyle.jpg",
+    "description": "",
+    "phone": "852-55555555",
+    "email": "kyle@gmail.com",
+    "is_mvp": false,
+    "hire_date": "2026-05-14T09:15:49.449Z"
+  }
+},
+{
+  "model": "doctors.doctor",
+  "pk": 2,
+  "fields": {
+    "name": "jenny",
+    "photo": "photos/2026/05/14/jenny.jpg",
+    "description": "",
+    "phone": "852-75395145",
+    "email": "jenny@gmail.com",
+    "is_mvp": false,
+    "hire_date": "2026-05-14T09:25:07.920Z"
+  }
+},
+{
+  "model": "doctors.doctor",
+  "pk": 3,
+  "fields": {
+    "name": "emma",
+    "photo": "photos/2026/05/14/emma.jpg",
+    "description": "",
+    "phone": "852-12345678",
+    "email": "emma@gmail.com",
+    "is_mvp": false,
+    "hire_date": "2026-05-14T09:25:31.665Z"
+  }
+},
+{
+  "model": "doctors.doctor",
+  "pk": 4,
+  "fields": {
+    "name": "John",
+    "photo": "photos/2026/05/14/doctor-8461303_1280-2242814655.jpg",
+    "description": "",
+    "phone": "852-98765412",
+    "email": "John@gmail.com",
+    "is_mvp": false,
+    "hire_date": "2026-05-14T09:27:23.836Z"
+  }
+},
+{
+  "model": "listings.listing",
+  "pk": 1,
+  "fields": {
+    "doctor": 1,
+    "title": "Kin On General Medical Centre",
+    "address": "Room 1001, 10/F, Argyle Centre Phase I, 688 Nathan Road, Mong Kok, Kowloon",
+    "district": "Mong Kok",
+    "choices": "General Outpatient",
+    "description": "Located in the heart of Mong Kok, providing comprehensive and high-quality primary care and physical examination services.",
+    "services": "General Consultation, Health Check, Vaccination",
+    "service": 2,
+    "room_type": "Standard Consultation Room",
+    "rooms": 3,
+    "photo_main": "photos/2026/05/14/clinic-1.jpg",
+    "photo_1": "photos/2026/05/14/clinic-2.jpg",
+    "photo_2": "photos/2026/05/14/clinic-3.jpg",
+    "photo_3": "photos/2026/05/14/clinic-4.jpg",
+    "photo_4": "photos/2026/05/14/clinic-5.jpg",
+    "is_published": true,
+    "list_date": "2026-05-14T09:37:12.398Z"
+  }
+},
+{
+  "model": "listings.listing",
+  "pk": 2,
+  "fields": {
+    "doctor": 1,
+    "title": "Central Clear Vision Eye Centre",
+    "address": "5/F, Hing Wai Building, 36 Queen's Road Central, Central, Hong Kong Island",
+    "district": "Central",
+    "choices": "Specialist Outpatient",
+    "description": "Equipped with advanced ophthalmic examination instruments, managed by experienced ophthalmologists",
+    "services": "Comprehensive Eye Examination, Cataract Surgery, LASIK",
+    "service": 3,
+    "room_type": "Surgery and Examination Room",
+    "rooms": 2,
+    "photo_main": "photos/2026/05/14/clinic-inside-1.jpg",
+    "photo_1": "photos/2026/05/14/clinic-inside-2.jpg",
+    "photo_2": "photos/2026/05/14/clinic-inside-3.jpg",
+    "photo_3": "photos/2026/05/14/clinic-inside-4.jpg",
+    "photo_4": "photos/2026/05/14/clinic-inside-5.jpg",
+    "is_published": true,
+    "list_date": "2026-05-14T09:38:29.861Z"
+  }
+},
+{
+  "model": "listings.listing",
+  "pk": 3,
+  "fields": {
+    "doctor": 2,
+    "title": "Sha Tin Happy Kids Paediatric Clinic",
+    "address": "8/F, New Town Tower, 10-18 Pak Hok Ting Street, Sha Tin, New Territories",
+    "district": "Sha Tin",
+    "choices": "Specialist Outpatient",
+    "description": "Dedicated to providing friendly medical care and developmental assessment for newborns and children",
+    "services": "Paediatric Disease Treatment, Paediatric Vaccination, Growth and Development Assessment",
+    "service": 2,
+    "room_type": "Dedicated Paediatric Consultation Room",
+    "rooms": 2,
+    "photo_main": "photos/2026/05/15/97b5d2bd-9a6a-4dda-a38d-c508d9c78333.jpeg",
+    "photo_1": "",
+    "photo_2": "",
+    "photo_3": "",
+    "photo_4": "",
+    "is_published": true,
+    "list_date": "2026-05-14T09:52:26.351Z"
+  }
+},
+{
+  "model": "listings.listing",
+  "pk": 4,
+  "fields": {
+    "doctor": 3,
+    "title": "Tsim Sha Tsui Health Dental",
+    "address": "7/F, Hai Phong Mansion, 38 Haiphong Road, Tsim Sha Tsui, Kowloon",
+    "district": "Tsim Sha Tsui",
+    "choices": "Dental",
+    "description": "Committed to providing painless dental treatment in a comfortable environment, focusing on patient experience",
+    "services": "Scaling, Filling, Invisalign, Implant",
+    "service": 4,
+    "room_type": "Independent Dental Treatment Room",
+    "rooms": 4,
+    "photo_main": "photos/2026/05/14/Gemini_Generated_Image_szk5ruszk5ruszk5_93MDows.png",
+    "photo_1": "photos/2026/05/14/Gemini_Generated_Image_ofqrqwofqrqwofqr_DcmbS5W.png",
+    "photo_2": "",
+    "photo_3": "",
+    "photo_4": "",
+    "is_published": true,
+    "list_date": "2026-05-14T11:30:04.065Z"
+  }
+},
+{
+  "model": "listings.listing",
+  "pk": 5,
+  "fields": {
+    "doctor": 3,
+    "title": "Causeway Bay Elegance Dermatology & Laser Centre",
+    "address": "12/F, East Point Centre, 555 Hennessy Road, Causeway Bay, Hong Kong Island",
+    "district": "Causeway Bay",
+    "choices": "Medical Aesthetics & Dermatology",
+    "description": "Specializes in treating various skin conditions and providing medical-grade beauty treatments",
+    "services": "Acne Treatment, Eczema Control, Laser Spot Removal, Hair Removal",
+    "service": 5,
+    "room_type": "Laser Treatment Room",
+    "rooms": 5,
+    "photo_main": "photos/2026/05/15/Gemini_Generated_Image_rhs0lnrhs0lnrhs0.png",
+    "photo_1": "",
+    "photo_2": "",
+    "photo_3": "",
+    "photo_4": "",
+    "is_published": true,
+    "list_date": "2026-05-14T13:29:40.841Z"
+  }
+},
+{
+  "model": "listings.listing",
+  "pk": 6,
+  "fields": {
+    "doctor": 4,
+    "title": "Kwun Tong Yan Sum Tong Chinese Medicine Clinic",
+    "address": "15/F, Prosperity Place, 6 Shing Yip Street, Kwun Tong, Kowloon",
+    "district": "Kwun Tong",
+    "choices": "Chinese Medicine Outpatient",
+    "description": "Combines traditional Chinese medicine with modern concentrated Chinese herbal medicine, offering acupuncture and Tui Na services",
+    "services": "Internal Medicine Consultation, Acupuncture, Cupping, Bone-setting and Tui Na",
+    "service": 4,
+    "room_type": "Acupuncture and Tui Na Room",
+    "rooms": 4,
+    "photo_main": "photos/2026/05/15/Gemini_Generated_Image_ejpwdiejpwdiejpw.png",
+    "photo_1": "",
+    "photo_2": "",
+    "photo_3": "",
+    "photo_4": "",
+    "is_published": true,
+    "list_date": "2026-05-14T13:30:37.431Z"
+  }
+},
+{
+  "model": "listings.listing",
+  "pk": 7,
+  "fields": {
+    "doctor": 2,
+    "title": "Tsuen Wan Kinetic Physiotherapy Centre",
+    "address": "Room 1805, 18/F, Nan Fung Centre, Tsuen Wan, New Territories",
+    "district": "Tsuen Wan",
+    "choices": "Physiotherapy",
+    "description": "Managed by registered physiotherapists, specializing in sports injuries and occupational strain",
+    "services": "Manual Therapy, Electrotherapy, Sports Injury Rehabilitation, Shockwave Therapy",
+    "service": 6,
+    "room_type": "Rehabilitation Exercise Area and Treatment Cubicle",
+    "rooms": 6,
+    "photo_main": "photos/2026/05/15/clinic-6.jpg",
+    "photo_1": "",
+    "photo_2": "",
+    "photo_3": "",
+    "photo_4": "",
+    "is_published": true,
+    "list_date": "2026-05-14T13:31:27.651Z"
+  }
+},
+{
+  "model": "listings.listing",
+  "pk": 8,
+  "fields": {
+    "doctor": 4,
+    "title": "Yuen Long Healthy Bone Orthopaedic Centre",
+    "address": "9/F, Yuen Long Trade Centre, 150 Castle Peak Road (Yuen Long), Yuen Long, New Territories",
+    "district": "Yuen Long",
+    "choices": "Specialist Outpatient",
+    "description": "Provides professional diagnosis and minimally invasive surgical advice for joint degeneration, fractures, and spinal problems",
+    "services": "Orthopaedic Consultation, X-ray Referral, Plaster Cast Fixation, Joint Injection",
+    "service": 2,
+    "room_type": "Examination and Plaster Room",
+    "rooms": 2,
+    "photo_main": "photos/2026/05/15/clinic-3.jpg",
+    "photo_1": "",
+    "photo_2": "",
+    "photo_3": "",
+    "photo_4": "",
+    "is_published": true,
+    "list_date": "2026-05-14T13:32:15.658Z"
+  }
+},
+{
+  "model": "listings.listing",
+  "pk": 9,
+  "fields": {
+    "doctor": 3,
+    "title": "North Point Women's Health Centre",
+    "address": "14/F, Fortress Tower, 250 King's Road, North Point, Hong Kong Island",
+    "district": "North Point",
+    "choices": "Specialist Outpatient",
+    "description": "Dedicated to women's health, providing private and reassuring gynaecological examinations and prenatal services",
+    "services": "Gynaecological Examination, Prenatal Checkup, Ultrasound Scan, Pap Smear",
+    "service": 3,
+    "room_type": "Ultrasound Examination Room",
+    "rooms": 3,
+    "photo_main": "photos/2026/05/14/Gemini_Generated_Image_6diu2v6diu2v6diu_7HcLUer.png",
+    "photo_1": "",
+    "photo_2": "",
+    "photo_3": "",
+    "photo_4": "",
+    "is_published": true,
+    "list_date": "2026-05-14T13:33:06.968Z"
+  }
+},
+{
+  "model": "listings.listing",
+  "pk": 10,
+  "fields": {
+    "doctor": 4,
+    "title": "Kowloon Bay Joyful Mind Psychological Counselling Centre",
+    "address": "20/F, Skyline Tower, 39 Wang Kwong Road, Kowloon Bay, Kow",
+    "district": "Kowloon Bay",
+    "choices": "Psychological Counselling",
+    "description": "Provides professional psychological counselling and assessment services for individuals facing emotional distress",
+    "services": "Individual Psychological Counselling, Child Play Therapy, Marriage Counselling",
+    "service": 3,
+    "room_type": "Soundproof Counselling Room",
+    "rooms": 3,
+    "photo_main": "photos/2026/05/15/clinic-4.jpg",
+    "photo_1": "",
+    "photo_2": "",
+    "photo_3": "",
+    "photo_4": "",
+    "is_published": true,
+    "list_date": "2026-05-14T13:33:49.923Z"
+  }
+}
+]
