@@ -25,7 +25,7 @@ urlpatterns = [
     path('', include('pages.urls',namespace='pages')),
     path('listings/', include('listings.urls',namespace='listings')),
     path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL,Document_root=settings.MEDIA_ROOT) + debug_toolbar_urls()
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + debug_toolbar_urls()
 
 admin.site.site_header = "Clinic Administration"
 admin.site.site_title = "Clinic Admin Portal"
