@@ -2,16 +2,69 @@
 {% load static %}
 {% load humanize %} 
 {% block content %} 
-
-    <section id="showcase-inner" class="py-5 text-white">
+    <section id="showcase-inner" class="showcase-search text-white py-5">
       <div class="container">
         <div class="row text-center">
           <div class="col-md-12">
-            <h1 class="display-4">Browse Our Clinic</h1>
-            <p class="lead">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
-              pariatur!
-            </p>
+            <form action={% url "listings:search" %}>
+              <!-- Form Row 1 -->
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label class="sr-only">Keywords</label>
+                  <input
+                    type="text"
+                    name="keywords"
+                    class="form-control"
+                    placeholder="Keyword (Clinic Title, Description, Doctor, etc)"
+                    value="{{values.keywords}}"
+                  />
+                </div>
+              </div>
+                <!-- Form Row 2 -->
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label class="sr-only">District</label>
+                    <select name="district" class="form-control">
+                      {% comment %} <option selected="true" disabled="disabled"> {% endcomment %}
+                        <option {% if not values.district %} selected="true" {% endif %}  value="" >
+                        District (All)
+                      </option>
+                      {% for key,value in district_choices.items %}
+                      <option value="{{key}}" {% if values.district == key %} selected="true" {% endif %} >
+                        {{value}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-4 mb-3">
+                    <label class="sr-only">Rooms</label>
+                    <select name="rooms" class="form-control">
+                      <option {% if not values.rooms %} selected="true" {% endif %} value=""  >
+                        Rooms (All)
+                      </option>
+                      {% for key,value in rooms_choices.items %}
+                      <option value="{{key}}" {% if values.rooms == value %} selected="true" {% endif %}>
+                        {{value}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <select name="room_type" class="form-control" id="type">
+                      <option {% if not values.room_type %} selected="true" {% endif %} value="" >
+                        Room Type (All)
+                      </option>
+                      {% for key,value in room_type_choices.items%}
+                        <option value="{{key}}" {% if values.room_type == key %} selected="true" {% endif %} >
+                            {{value}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+              <button class="btn btn-secondary btn-block mt-4" type="submit">
+                Submit form
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -25,7 +78,10 @@
             <li class="breadcrumb-item">
               <a href={% url "pages:index" %}> <i class="fas fa-home"></i> Home</a>
             </li>
-            <li class="breadcrumb-item active">Browse Listings</li>
+            <li class="breadcrumb-item">
+              <a href={% url "listings:index" %}>Browse Listings</a>
+            </li>
+            <li class="breadcrumb-item active">Search Results</li>
           </ol>
         </nav>
       </div>
