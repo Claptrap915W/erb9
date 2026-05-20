@@ -37,6 +37,16 @@
                 <i class="fas fa-user-plus"></i> Welcome {{user.username}}(dashboard)</a
               >
             </li>
+            {% comment %} logout {% endcomment %}
+            <li class="nav-item mr-3">
+              <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>Logout
+              </a>
+              <form action="{% url 'accounts:logout' %}" method="POST" id='logout'>
+                {% csrf_token %}
+                <input type="hidden"/>
+              </from>
+            </li>
             {% else %}
             <li {% if 'register' in request.path %} class="nav-item active mr-3"
             {%else%} class='nav-item mr-3' {%endif%}>
