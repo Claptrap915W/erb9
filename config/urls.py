@@ -14,7 +14,6 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from xml.dom.minidom import Document
 from django.contrib import admin
 from django.urls import path, include
 from debug_toolbar.toolbar import debug_toolbar_urls
@@ -24,6 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', include('pages.urls',namespace='pages')),
     path('listings/', include('listings.urls',namespace='listings')),
+    path('accounts/', include('accounts.urls',namespace='accounts')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + debug_toolbar_urls()
 
