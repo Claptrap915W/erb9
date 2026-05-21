@@ -28,7 +28,7 @@
         </nav>
         </div>
     </section>
-
+{% include "partials/_alert.html" %}
     <!-- Listing -->
     <section id="listing" class="py-4">
         <div class="container">
@@ -197,23 +197,38 @@
             </button>
             </div>
             <div class="modal-body">
-            <form>
+            <form action={% url 'contacts:contact' %} method="POST">
+                {% csrf_token %}
                 <div class="form-group">
                 {% comment %} form action {% endcomment %}
-                <label for="property_name" class="col-form-label"
-                    >Property:</label
+                <input type="hidden" name="listing_id" value="{{listing.id}}" />
+                <input type="hidden" name="doctor_email" value="{{listing.doctor.email}}"/>
+                {% if user.is_authenticated %}
+                <input type="hidden" name="user_id" value="{{user.id}}" />
+                {% else %}
+                <input type="hidden" name="user_id" value="0" />
+                {% endif %}
+                <label for="Clinic_name" class="col-form-label"
+                    >Clinic:</label
                 >
                 <input
                     type="text"
                     name="listing"
                     class="form-control"
-                    value="45 Prince Street"
-                    disabled
+                    value="{{listing.title | title}}"
+                    readonly
                 />
                 </div>
                 <div class="form-group">
                 <label for="name" class="col-form-label">Name:</label>
-                <input type="text" name="name" class="form-control" required />
+                <input type="text" name="name" class="form-control" 
+                    {% if user.is_authenticated %}
+                    value="{{user.first_name}} {{user.last_name}}"
+                    readonly
+                    {% else %}
+                    required 
+                    {% endif %}
+                />
                 </div>
                 <div class="form-group">
                 <label for="email" class="col-form-label">Email:</label>
@@ -221,7 +236,12 @@
                     type="email"
                     name="email"
                     class="form-control"
-                    required
+                    {% if user.is_authenticated %}
+                    value="{{user.email}}"
+                    readonly
+                    {% else %}
+                    required 
+                    {% endif %}
                 />
                 </div>
                 <div class="form-group">
