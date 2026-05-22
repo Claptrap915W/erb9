@@ -1,36 +1,54 @@
-{% extends "base.html" %}
-{% load widget_tweaks %}
-{% block content %}
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card p-6 shadow-sm">
-                <h1 class="text-center mb-4">
-                    Edit Message
-                </h1>
+{% extends "base.html" %}  {# 继承 base.html 母模板 #}
+{% load widget_tweaks %}   {# 加载表单样式增强库 #}
+
+{% block content %}  {# 页面内容开始 #}
+
+<div class="container mt-5">  {# 容器 + 顶部间距 #}
+    <div class="row justify-content-center">  {# 水平居中 #}
+        <div class="col-md-6">  {# 中等屏幕占6格（居中） #}
+            <div class="card p-6 shadow-sm">  {# 卡片样式 + 阴影 #}
+                <h1 class="text-center mb-4">Edit Message</h1>  {# 标题 #}
+                
+                {% comment %} {# ======================
+                编辑表单
+                提交到：当前编辑的这条数据的地址
+                方法：POST（提交修改）
+                ====================== #} {% endcomment %}
                 <form 
                 action="{% url 'contacts:edit_contact' contact.id%}"
                 method="POST"
                 >
-                {% csrf_token %}
+                {% csrf_token %}  {# Django 安全验证（必须写） #}
                 <div class="mb-3">
+                    {# 显示 message 字段的标签 #}
                     {{form.message | add_label_class:"form-label"}}
+
+                    {% comment %} {# ======================
+                        如果表单验证失败，显示错误信息
+                    ====================== #} {% endcomment %}
                     <!--form error-->
                     {% if form.message.errors %}
                         <div class="text-danger mb-2">
                             {{form.message.errors}}
                         </div>
                     {% endif %}
+
+                    {# 显示多行输入框，加上 Bootstrap 样式 #}
                     {{form.message | add_class:"form-control"}}
+
+                    {# 提交按钮 #}
                     <button 
-                    class="btn btn-primary w-100"
-                    type="submit"
+                        class="btn btn-primary w-100 mt-3" 
+                        type="submit"
                     >
-                    Submit
+                        Submit
                     </button>
                 </div>
+                </form>
             </div>
+
         </div>
     </div>
 </div>
-{% endblock %}
+
+{% endblock %}  {# 页面内容结束 #}

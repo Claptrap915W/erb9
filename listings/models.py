@@ -1,6 +1,7 @@
 from django.db import models
 from doctors.models import Doctor
 from .choices import district_choices, room_type_choices, rooms_choices
+from taggit.managers import TaggableManager
 
 # Create your models here.
 class Listing(models.Model):
@@ -10,7 +11,7 @@ class Listing(models.Model):
     district=models.CharField(max_length=50, choices=district_choices.items(),default="")
     choices=models.CharField(max_length=50)
     description=models.CharField(blank=True)
-    services=models.CharField(max_length=200)
+    services=TaggableManager(verbose_name='Services',blank=True)
     service=models.IntegerField()
     room_type=models.CharField(max_length=50, choices=room_type_choices.items(),default="")
     rooms=models.IntegerField(choices=rooms_choices.items(),default=1)

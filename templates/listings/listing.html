@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load humanize %} 
+{% block title%} {{listing.title | title}} {% endblock %}
 {% block content %} 
     <section id="showcase-inner" class="py-5 text-white">
         <div class="container">
@@ -122,6 +123,16 @@
                     <i class="fas fa-dumbbell"></i> Treatment:
                     <span class="float-right"> Have </span>
                     </li>
+                    <li class="list-group-item text-secondary">
+                    <i class="fas fa-bed"></i> Services :
+                    {% if listing.services.all %}
+                    {% for services_tag in listing.services.all %}
+                    <span class="float-right">{{services_tag.name| title }}</span><br>
+                    {% endfor %}
+                    {% else %}
+                    <span class="float-right">No Services</span>
+                    {% endif %}
+                    </li>
                 </ul>
                 </div>
                 <div class="col-md-6">
@@ -145,32 +156,36 @@
                 </ul>
                 </div>
             </div>
-
+            {% comment %} Services tag {% endcomment %}
+            {% comment %} <div class="row mb-5">
+                <h4 class="text-secondary">Services : </h4>
+                {% if listing.services.all %}
+                <ul>
+                    {% for services_tag in listing.services.all %}
+                    <li class="mr-3">
+                    <h4>{{services_tag.naem | title }}</h4>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <h4>No Services</h4>
+                {% endif %} {% endcomment %}
             <!-- Description -->
             <div class="row mb-5">
                 <div class="col-md-12">
-                {% comment %} Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Mollitia recusandae esse reiciendis officia omnis non rerum
-                dicta cupiditate nostrum molestias deserunt aut minus inventore
-                animi atque, consequuntur ad fugit. Possimus culpa blanditiis
-                repellendus ipsa similique ullam, natus error dolor harum. {% endcomment %}
                 {{listing.description}}
                 </div>
             </div>
             </div>
             <div class="col-md-3">
             <div class="card mb-3">
-                {% comment %} fix src {% endcomment %}
                 <img
                 class="card-img-top"
-                {% comment %} src="assets/img/doctors/kyle.jpg" {% endcomment %}
                 src={{listing.doctor.photo.url}}
-                {% comment %} alt="Seller of the month" {% endcomment %}
                 alt="Doctor of the month"
                 />
                 <div class="card-body">
                 <h5 class="card-title">Medical Practitioner</h5>
-                {% comment %} <h6 class="text-secondary">Kyle Chan</h6> {% endcomment %}
                     <h6 class="text-secondary">{{listing.doctor.name}}</h6>
                 </div>
             </div>
