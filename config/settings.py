@@ -105,7 +105,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'erb9',
-        'USER': 'postgres',
+        'USER': 'claptrap',
         "PASSWORD" : 759558,
         'HOST' : 'localhost',
         'PORT' : '5432',
